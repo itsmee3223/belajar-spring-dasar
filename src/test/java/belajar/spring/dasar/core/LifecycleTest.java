@@ -1,6 +1,7 @@
 package belajar.spring.dasar.core;
 
 import belajar.spring.dasar.core.data.Connection;
+import belajar.spring.dasar.core.data.Server;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -19,11 +20,16 @@ public class LifecycleTest {
 
     @AfterEach
     void tearDown() {
-         applicationContext.close();
+//         applicationContext.close();
     }
 
     @Test
     void testConnection() {
         Connection connection = applicationContext.getBean(Connection.class);
+    }
+
+    @Test
+    void testServer() {
+        Server server = applicationContext.getBean(Server.class);
     }
 }
