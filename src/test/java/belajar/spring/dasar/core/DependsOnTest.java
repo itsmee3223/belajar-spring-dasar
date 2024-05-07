@@ -16,6 +16,7 @@ public class DependsOnTest {
 
     @Test
     void testDependsOn(){
-        Foo foo = applicationContext.getBean(Foo.class);
+//        Foo foo = applicationContext.getBean(Foo.class);
+//        Foo tidak dibuat jika tidak dipanggil
     }
 }
