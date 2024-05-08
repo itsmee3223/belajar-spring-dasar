@@ -1,6 +1,8 @@
 package belajar.spring.dasar.core;
 
+import belajar.spring.dasar.core.repository.CategoryRepository;
 import belajar.spring.dasar.core.repository.ProductRepository;
+import belajar.spring.dasar.core.service.CategoryService;
 import belajar.spring.dasar.core.service.ProductService;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
@@ -32,5 +34,13 @@ public class ComponentTest {
         ProductRepository productRepository = applicationContext.getBean(ProductRepository.class);
 
         Assertions.assertSame(productRepository, productService.getProductRepository());
+    }
+
+    @Test
+    void testSetterDependencyInjection() {
+        CategoryService categoryService = applicationContext.getBean(CategoryService.class);
+        CategoryRepository categoryRepository = applicationContext.getBean(CategoryRepository.class);
+
+        Assertions.assertSame(categoryService.getCategoryRepository(), categoryRepository);
     }
 }
