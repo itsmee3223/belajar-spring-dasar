@@ -1,5 +1,6 @@
 package belajar.spring.dasar.core;
 
+import belajar.spring.dasar.core.data.MultiFoo;
 import belajar.spring.dasar.core.repository.CategoryRepository;
 import belajar.spring.dasar.core.repository.CustomerRepository;
 import belajar.spring.dasar.core.repository.ProductRepository;
@@ -56,6 +57,12 @@ public class ComponentTest {
 
         Assertions.assertSame(normalCustomerRepository, customerService.getNormalCustomerRepository());
         Assertions.assertSame(premiumCustomerRepository, customerService.getPermiumCustomerRepository());
+    }
 
+    @Test
+    void testObjectProvider() {
+
+        MultiFoo multiFoo = applicationContext.getBean(MultiFoo.class);
+        Assertions.assertEquals(3, multiFoo.getFoos().size());
     }
 }
