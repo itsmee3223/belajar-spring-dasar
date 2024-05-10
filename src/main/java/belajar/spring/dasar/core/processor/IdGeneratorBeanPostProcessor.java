@@ -4,13 +4,15 @@ import belajar.spring.dasar.core.aware.IdAware;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.config.BeanPostProcessor;
+import org.springframework.core.Ordered;
 import org.springframework.stereotype.Component;
 
+import java.lang.annotation.Annotation;
 import java.util.UUID;
 
 @Slf4j
 @Component
-public class IdGeneratorBeanPostProcessor implements BeanPostProcessor {
+public class IdGeneratorBeanPostProcessor implements BeanPostProcessor, Ordered {
 
     @Override
     public Object postProcessAfterInitialization(Object bean, String beanName) throws BeansException{
@@ -20,5 +22,10 @@ public class IdGeneratorBeanPostProcessor implements BeanPostProcessor {
         }
 
         return bean;
+    }
+
+    @Override
+    public int getOrder() {
+        return 1;
     }
 }

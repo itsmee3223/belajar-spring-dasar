@@ -2,6 +2,7 @@ package belajar.spring.dasar.core;
 
 import belajar.spring.dasar.core.data.Car;
 import belajar.spring.dasar.core.processor.IdGeneratorBeanPostProcessor;
+import belajar.spring.dasar.core.processor.PrefixIdGeneratorBeanPostProcessor;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -14,7 +15,8 @@ public class BeanPostProcessorTest {
     @Configuration
     @Import({
             Car.class,
-            IdGeneratorBeanPostProcessor.class
+            IdGeneratorBeanPostProcessor.class,
+            PrefixIdGeneratorBeanPostProcessor.class,
     })
     public static class TestConfiguration {
 
