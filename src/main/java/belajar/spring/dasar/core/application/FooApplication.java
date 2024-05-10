@@ -1,5 +1,6 @@
 package belajar.spring.dasar.core.application;
 
+import belajar.spring.dasar.core.data.Bar;
 import belajar.spring.dasar.core.data.Foo;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -10,7 +11,7 @@ import org.springframework.context.annotation.Bean;
 @SpringBootApplication
 public class FooApplication {
     @Bean
-    public Foo foo(){
+    public Foo foo(Bar bar){
         return new Foo();
     }
 
