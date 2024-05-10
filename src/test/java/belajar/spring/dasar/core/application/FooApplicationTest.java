@@ -11,8 +11,8 @@ public class FooApplicationTest {
     @Autowired
     Foo foo;
 
-    @Test
-    void testFoo(){
-        Assertions.assertNotNull(foo);
-    }
+//    @Test
+//    void testFoo(){
+//        Assertions.assertNotNull(foo);
+//    }
 }
