@@ -11,9 +11,15 @@ import org.springframework.context.annotation.Bean;
 @SpringBootApplication
 public class FooApplication {
     @Bean
-    public Foo foo(Bar bar){
+    public Foo foo(){
         return new Foo();
     }
+
+//    error no Bar bean
+//    @Bean
+//    public Foo foo2(Bar bar){
+//        return new Foo();
+//    }
 
     public static void main(String[] args){
         ConfigurableApplicationContext applicationContext = SpringApplication.run(FooApplication.class, args);
