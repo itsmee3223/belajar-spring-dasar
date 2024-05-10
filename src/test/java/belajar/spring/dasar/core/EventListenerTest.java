@@ -1,5 +1,8 @@
 package belajar.spring.dasar.core;
 
+import belajar.spring.dasar.core.listener.LoginAgainListener;
+import belajar.spring.dasar.core.listener.LoginSuccessListener;
+import belajar.spring.dasar.core.listener.UserListener;
 import belajar.spring.dasar.core.service.UserService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -13,6 +16,8 @@ public class EventListenerTest {
     @Import({
             UserService.class,
             LoginSuccessListener.class,
+            LoginAgainListener.class,
+            UserListener.class
     })
     public static class TestConfiguration {
 

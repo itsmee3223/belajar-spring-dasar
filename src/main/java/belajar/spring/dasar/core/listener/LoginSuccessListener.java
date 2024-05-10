@@ -1,4 +1,4 @@
-package belajar.spring.dasar.core;
+package belajar.spring.dasar.core.listener;
 
 import belajar.spring.dasar.core.event.LoginSuccessEvent;
 import lombok.extern.slf4j.Slf4j;
